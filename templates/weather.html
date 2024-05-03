@@ -1,0 +1,26 @@
+<!-- weather.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1 class="page-title">Weather Information for {{ weather_info['city_name'] }}</h1>
+    <div class="weather-image-container">
+        <img src="{{ url_for('static', filename='images/weather.jpg') }}" alt="Weather Image" class="weather-image">
+      </div>
+    <div class="weather-info">
+        <p><strong>Current Temperature:</strong> {{ weather_info['current_temperature'] }}° F</p>
+        <p><strong>Minimum Temperature:</strong> {{ weather_info['min_temperature'] }}° F</p>
+        <p><strong>Maximum Temperature:</strong> {{ weather_info['max_temperature'] }}° F</p>
+        <p><strong>Weather Conditions:</strong> {{ weather_info['weather_conditions'] }}</p>
+        <p><strong>Weather Description:</strong> {{ weather_info['weather_description'] }}</p>
+        <p><strong>Humidity:</strong> {{ weather_info['humidity'] }}%</p>
+        <p><strong>Wind Speed:</strong> {{ weather_info['wind_speed'] }} m/s</p>
+        <p><strong>Wind Direction:</strong> {{ weather_info['wind_direction'] }}</p>
+    </div>
+</body>
+</html>
